@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I Love You Khushi</title>
+	<style>
+		#heart {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 200px;
+			height: 200px;
+			background-color: #ff6b6b;
+			border-radius: 50% 50% 0 0;
+			overflow: hidden;
+			animation: heartbeat 1s ease-in-out infinite;
+		}
+
+		#heart:before,
+		#heart:after {
+			position: absolute;
+			content: "";
+			left: 100px;
+			top: 0;
+			width: 100px;
+			height: 150px;
+			background-color: #ff6b6b;
+			border-radius: 100px 100px 0 0;
+			transform: rotate(-45deg);
+			transform-origin: 0 100%;
+		}
+
+		#heart:after {
+			left: 0;
+			transform: rotate(45deg);
+			transform-origin: 100% 100%;
+		}
+
+		#text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 3em;
+			font-weight: bold;
+			color: #fff;
+			text-shadow: 1px 1px 0px #ff6b6b, -1px -1px 0px #ff6b6b;
+			animation: heartbeat 1s ease-in-out infinite;
+		}
+
+		@keyframes heartbeat {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.1);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="heart"></div>
+	<div id="text">I love you Khushi</div>
+
+	<script>
+		// Colorful background animation
+		const body = document.querySelector("body");
+		const colors = ["#ff6b6b", "#ffe66d", "#8be9fd", "#50fa7b", "#ffb86c", "#bd93f9", "#ff79c6"];
+		let i = 0;
+
+		setInterval(() => {
+			body.style.backgroundColor = colors[i % colors.length];
+			i++;
+		}, 1000);
+	</script>
+</body>
+</html>
